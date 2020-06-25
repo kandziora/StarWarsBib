@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'star-wars-bib';
+  title:string = 'star wars libary';
+
+  constructor(){
+  }
+
+
 }
