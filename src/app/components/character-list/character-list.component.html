@@ -1,17 +1,18 @@
 <div>
     <h1>Charactere</h1>
     
-    image
-    <ul *ngFor="let character of characterList.results ">
-        <li>  {{character.name}}
-        </li>
-
+    <ul *ngFor="let character of characterList">
+            <app-starwars-card  [url]="character.url" [title]="character.name" line1="Geburtsjahr: {{character.birth_year}}" line2="Gender: {{character.gender}}" 
+                line3="Haarfarbe: {{character.hair_color}}" class="col-sm-4">
+            </app-starwars-card>
     </ul>
-    <!--
-    <app-character *ngFor="let character of characterList "  [character]="character">
-        <li>{{ character.name  }}</li>
-        <li>{{ character.mass  }}</li>
-
-    </app-character>-->
+   
+<br>
+<div *ngIf="previous">
+    <button (click)="fetchCharactersList(previous)">previous</button>
 </div>
-asdf
+<div *ngIf="next">
+    <button (click)="fetchCharactersList(next)">next</button>
+</div>
+
+</div>

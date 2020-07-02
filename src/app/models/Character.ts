@@ -1,7 +1,4 @@
-import { ArrayType } from '@angular/compiler';
-
 export class Character {
-
         name: string;
         height: string;
         mass: string;
@@ -10,13 +7,13 @@ export class Character {
         eye_color: string;
         birth_year: string;
         gender: string;
-        hoemeworld: string;
-        films: [];
-        species:  [];
-        vehicles:  [];
-        starships:  [];
-        created: string;
-        edited: string;
+        homeworld: string;
+        films: Array<string>;
+        species:  Array<string>;
+        vehicles:  Array<string>;
+        starships:  Array<string>;
+        created: Date;
+        edited: Date;
         url: string;        
 }
         

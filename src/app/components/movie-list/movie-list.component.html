@@ -1,0 +1,22 @@
+<div>
+    <h1>Filme</h1>
+    
+    <ul *ngFor="let movie of movieList">
+        <li>  {{movie.title}}
+        </li>
+        <li>  {{movie.episode_id}}
+        </li>
+        <li *ngFor="let vehicles of movie.vehicles"> 
+             <a href="{{vehicles}}">vehicel {{vehicles.index}}</a>
+        </li>
+    </ul>
+   
+<br>
+<div *ngIf="previous">
+    <button (click)="fetchMoviesList(previous)">previous</button>
+</div>
+<div *ngIf="next">
+    <button (click)="fetchMoviesList(next)">next</button>
+</div>
+
+</div>

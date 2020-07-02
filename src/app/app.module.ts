@@ -8,6 +8,12 @@ import { PlanetsComponent } from './components/planets/planets.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterComponent } from './components/character/character.component';
 import { StarwarsComponent } from './components/starwars/starwars.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { PlanetListComponent } from './components/planet-list/planet-list.component';
+import { PlanetComponent } from './components/planet/planet.component';
+import { CharacterService } from './services/character.service';
+import { StarwarsCardComponent } from './components/starwars-card/starwars-card.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +21,19 @@ import { StarwarsComponent } from './components/starwars/starwars.component';
     PlanetsComponent,
     CharacterListComponent,
     CharacterComponent,
-    StarwarsComponent
+    StarwarsComponent,
+    MovieListComponent,
+    MovieComponent,
+    PlanetListComponent,
+    PlanetComponent,
+    StarwarsCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

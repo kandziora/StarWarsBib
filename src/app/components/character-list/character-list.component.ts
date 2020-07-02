@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../../models/Character';
 import { CharacterService } from '../../services/character.service';
+import { MovieService } from '../../services/movie.service';
+import { ApiResponseCharacterList } from 'src/app/models/ApiResponse';
+//import { SwapiService } from 'ng2-swapi';
 
 @Component({
   selector: 'app-character-list',
@@ -9,17 +12,26 @@ import { CharacterService } from '../../services/character.service';
 })
 export class CharacterListComponent implements OnInit {
 
-  characterList : any;
 
   constructor(private characterService:CharacterService) {
 
    }
 
-  ngOnInit() {
-    this.characterService.getCharacters().subscribe(characterList => {
-      this.characterList = characterList;
-      console.log(this.characterList);
-    });
+   next: string;
+   previous: string;
+   characterList: Array<Character>;
+
+  ngOnInit() { 
+    this.fetchCharactersList();
   }
 
-}
+  fetchCharactersList(url?: string) { 
+      console.log(url);
+    this.characterService.getCharacters(url).subscribe(response => { 
+      console.log(response);
+      this.next = response.next;
+      this.previous  = response.previous;
+      this.characterList  =  response.results;
+    });
+  }
+ }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Character } from '../models/Character';
+import { HttpClient } from '@angular/common/http';
+import { ApiResponseCharacterList } from '../models/ApiResponse';
 import { Observable } from 'rxjs';
+import { Character } from '../models/Character';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +11,10 @@ export class CharacterService {
   charactersUrl:string = 'https://swapi.dev/api/people/';
   constructor(private http:HttpClient) { }
 
-
-
-
-  getCharacters():Observable<Character[]> {
-    console.log(this.charactersUrl);
-      return this.http.get<Character[]>(this.charactersUrl);
+  getCharacters(url:string = this.charactersUrl):Observable<ApiResponseCharacterList> {
+      return  this.http.get<ApiResponseCharacterList>(url);
   }
-  // makeArray = (object) => {
-  //    let objectKeys = Object.keys(object);
-  //     let newArray = [];
-  //     for (let prop of objectKeys){
-  //       newArray.push(objectKeys[prop])
-  //     }
-  //     return objectKeys;
-  // }
-
+  getCharacter(id:string):Observable<Character> {
+    return this.http.get<Character>(this.charactersUrl + id);
+  } 
 }
