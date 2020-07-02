@@ -1,18 +1,23 @@
-<div>
-    <h1>Charactere</h1>
-    
-    <ul *ngFor="let character of characterList">
-            <app-starwars-card  [url]="character.url" [title]="character.name" line1="Geburtsjahr: {{character.birth_year}}" line2="Gender: {{character.gender}}" 
-                line3="Haarfarbe: {{character.hair_color}}" class="col-sm-4">
-            </app-starwars-card>
-    </ul>
-   
-<br>
-<div *ngIf="previous">
-    <button (click)="fetchCharactersList(previous)">previous</button>
-</div>
-<div *ngIf="next">
-    <button (click)="fetchCharactersList(next)">next</button>
-</div>
+<h1>Charactere</h1>
+<div class="row">
 
+    <div *ngFor="let character of characterList" class="col-sm-4">
+        <app-starwars-card  
+            [url]="character.url" 
+            [title]="character.name" 
+            line1="Geburtsjahr: {{character.birth_year}}" 
+            line2="Gender: {{character.gender}}" 
+            line3="Haarfarbe: {{character.hair_color}}" 
+            path="character"
+            >
+        </app-starwars-card>
+    </div>
+</div>
+<div class="paging">
+    <button (click)="fetchCharactersList(previous)" *ngIf="previous">            
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <button (click)="fetchCharactersList(next)" *ngIf="next">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
 </div>

@@ -10,13 +10,13 @@ import { StarwarsComponent } from './components/starwars/starwars.component';
 
 
 const routes: Routes = [
-  {path: 'starwars', component: StarwarsComponent},
+  {path: '', component: StarwarsComponent},
   {path: 'movie-list', component: MovieListComponent},
-  {path: 'movie', component: MovieComponent},
+  {path: 'movie/:id', component: MovieComponent},
   {path: 'character/:id', component: CharacterComponent},
   {path: 'character-list', component: CharacterListComponent},
   {path: 'planet-list', component: PlanetListComponent},
-  {path: 'planet', component: PlanetComponent},
+  {path: 'planet/:id', component: PlanetComponent},
 
 
 ];

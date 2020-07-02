@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+app-root h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+li {
+    list-style: none;
+}
+p {
+    margin-left: 40px;
+}
+.paging {
+    text-align: center;
+
+}
+.paging button {
+    padding: 20px;
+    border: none;
+}
+.paging button:focus {
+    border: none;
+}

@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlanetsComponent } from './components/planets/planets.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterComponent } from './components/character/character.component';
 import { StarwarsComponent } from './components/starwars/starwars.component';
@@ -14,11 +13,11 @@ import { PlanetListComponent } from './components/planet-list/planet-list.compon
 import { PlanetComponent } from './components/planet/planet.component';
 import { CharacterService } from './services/character.service';
 import { StarwarsCardComponent } from './components/starwars-card/starwars-card.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlanetsComponent,
     CharacterListComponent,
     CharacterComponent,
     StarwarsComponent,
@@ -31,7 +30,8 @@ import { StarwarsCardComponent } from './components/starwars-card/starwars-card.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

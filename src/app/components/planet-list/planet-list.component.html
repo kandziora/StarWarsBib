@@ -1,1 +1,23 @@
-<p>planet-list works!</p>
+<h1>Planeten</h1>
+<div class="row">
+
+    <div *ngFor="let planet of planetList" class="col-sm-4">
+        <app-starwars-card  
+            [url]="planet.url" 
+            [title]="planet.name" 
+            line1="Climate: {{planet.climate}}" 
+            line2="Population: {{planet.population}}" 
+            line3="Terrain: {{planet.terrain}}" 
+            path="planet"
+            >
+        </app-starwars-card>
+    </div>
+</div>
+<div class="paging">
+    <button (click)="fetchPlanetList(previous)" *ngIf="previous">            
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <button (click)="fetchPlanetList(next)" *ngIf="next">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+</div>

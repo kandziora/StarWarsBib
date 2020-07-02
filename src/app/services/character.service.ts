@@ -8,13 +8,13 @@ import { Character } from '../models/Character';
   providedIn: 'root'
 })
 export class CharacterService {
-  charactersUrl:string = 'https://swapi.dev/api/people/';
+  rootCharactersUrl:string = 'https://swapi.dev/api/people/';
   constructor(private http:HttpClient) { }
 
-  getCharacters(url:string = this.charactersUrl):Observable<ApiResponseCharacterList> {
+  getCharacters(url:string = this.rootCharactersUrl):Observable<ApiResponseCharacterList> {
       return  this.http.get<ApiResponseCharacterList>(url);
   }
   getCharacter(id:string):Observable<Character> {
-    return this.http.get<Character>(this.charactersUrl + id);
+    return this.http.get<Character>(this.rootCharactersUrl + id);
   } 
 }

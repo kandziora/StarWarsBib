@@ -13,6 +13,7 @@ export class StarwarsCardComponent implements OnInit {
   @Input('line1') line1: string;
   @Input('line2') line2: string;
   @Input('line3') line3: string;
+  @Input('path') path: string;
 
   constructor() { }
 

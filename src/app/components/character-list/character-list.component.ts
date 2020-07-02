@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../../models/Character';
 import { CharacterService } from '../../services/character.service';
-import { MovieService } from '../../services/movie.service';
-import { ApiResponseCharacterList } from 'src/app/models/ApiResponse';
-//import { SwapiService } from 'ng2-swapi';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-character-list',
@@ -11,6 +9,8 @@ import { ApiResponseCharacterList } from 'src/app/models/ApiResponse';
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
+  faChevronRight = faChevronRight;
+  faChevronLeft = faChevronLeft;
 
 
   constructor(private characterService:CharacterService) {

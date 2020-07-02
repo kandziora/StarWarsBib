@@ -22,7 +22,6 @@ export class MovieListComponent implements OnInit {
  }
 
  fetchMovieList(url?: string) { 
-     console.log(url);
    this.movieService.getMovies(url).subscribe(response => { 
      console.log(response);
      this.next = response.next;
@@ -30,6 +29,5 @@ export class MovieListComponent implements OnInit {
      this.movieList  =  response.results;
    });
  }
-
 }
   

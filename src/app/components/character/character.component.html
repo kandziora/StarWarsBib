@@ -1,7 +1,23 @@
 <div *ngIf="character">
-            {{ character.name }}
-            {{ character.birth_year }}
-    </div>
+    <center> Characterdetails </center>
+    <h1> {{ character.name }} </h1>
+
+    <ul>
+        <b>Details:</b>
+        <li>Größe: {{character.height}}</li>
+        <li>Gewicht: {{character.mass}}</li>
+        <li>Haarfarbe: {{character.hair_color}}</li>
+        <li>Augenfarbe: {{character.eye_color}}</li>
+        <li>Geburtsjahr: {{character.birth_year}}</li>
+        <li>Geschlecht: {{character.gender}}</li>
+        <li>Heimatplanet: {{character.homeworld}}</li>
+
+    </ul>
+    <p><b>Filme:</b></p>
+    <ul *ngFor="let film of  character.films">
+        <li>{{film}}</li>
+    </ul>
+</div>
 <div *ngIf="!character">
     ...Loading
 </div>
