@@ -1,7 +1,8 @@
 <h1>Charactere</h1>
+<button (click)="openAddCharacter()" class="float-right">+ add </button>
 <div class="row">
 
-    <div *ngFor="let character of characterList" class="col-sm-4">
+    <div *ngFor="let character of characterList" class="col-md-4 col-sm-6">
         <app-starwars-card  
             [url]="character.url" 
             [title]="character.name" 

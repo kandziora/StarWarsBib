@@ -14,6 +14,12 @@ import { PlanetComponent } from './components/planet/planet.component';
 import { CharacterService } from './services/character.service';
 import { StarwarsCardComponent } from './components/starwars-card/starwars-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddCharacterComponent } from './components/add-character/add-character.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { AddPlanetComponent } from './components/add-planet/add-planet.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,15 +31,28 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MovieComponent,
     PlanetListComponent,
     PlanetComponent,
-    StarwarsCardComponent
+    StarwarsCardComponent,
+    AddCharacterComponent,
+    AddMovieComponent,
+    AddPlanetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [CharacterService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddCharacterComponent,
+    AddMovieComponent,
+    AddPlanetComponent
+  ]
+
+  
 })
 export class AppModule { }

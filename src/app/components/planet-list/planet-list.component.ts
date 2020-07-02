@@ -25,9 +25,7 @@ export class PlanetListComponent implements OnInit {
  }
 
  fetchPlanetList(url?: string) { 
-     console.log(url);
    this.planetService.getPlanets(url).subscribe(response => { 
-     console.log(response);
      this.next = response.next;
      this.previous  = response.previous;
      this.planetList  =  response.results;

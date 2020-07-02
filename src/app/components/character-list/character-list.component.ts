@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Character } from '../../models/Character';
 import { CharacterService } from '../../services/character.service';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { AddCharacterComponent } from '../add-character/add-character.component';
 
 @Component({
   selector: 'app-character-list',
@@ -12,8 +14,7 @@ export class CharacterListComponent implements OnInit {
   faChevronRight = faChevronRight;
   faChevronLeft = faChevronLeft;
 
-
-  constructor(private characterService:CharacterService) {
+  constructor(private characterService:CharacterService, private dialog: MatDialog) {
 
    }
 
@@ -26,12 +27,17 @@ export class CharacterListComponent implements OnInit {
   }
 
   fetchCharactersList(url?: string) { 
-      console.log(url);
     this.characterService.getCharacters(url).subscribe(response => { 
-      console.log(response);
       this.next = response.next;
       this.previous  = response.previous;
       this.characterList  =  response.results;
     });
   }
+
+  openAddCharacter() {
+    const dialogConfig = new MatDialogConfig();
+
+
+
+    this.dialog.open(AddCharacterComponent, dialogConfig);}
  }

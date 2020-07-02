@@ -1,7 +1,8 @@
 <h1>Filme</h1>
+<button class="float-right">+ add </button>
 <div class="row">
 
-    <div *ngFor="let movie of movieList" class="col-sm-4">
+    <div *ngFor="let movie of movieList" class="col-sm-6 col-md-4">
         <app-starwars-card  
             [url]="movie.url" 
             [title]="movie.title" 

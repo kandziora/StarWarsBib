@@ -23,7 +23,6 @@ export class MovieListComponent implements OnInit {
 
  fetchMovieList(url?: string) { 
    this.movieService.getMovies(url).subscribe(response => { 
-     console.log(response);
      this.next = response.next;
      this.previous  = response.previous;
      this.movieList  =  response.results;

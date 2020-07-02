@@ -21,7 +21,6 @@ export class PlanetComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
 
     this.planetService.getPlanet(id).subscribe(response => { 
-
       this.planet  =  response;
     });
   }

@@ -18,11 +18,7 @@ export class StarwarsCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
-    
     this.id = this.url.split("/").slice(-2)[0];
-    console.log(this.url.split("/"));    
-    console.log(this.id);
   }
 
 }
