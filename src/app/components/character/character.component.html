@@ -10,13 +10,21 @@
         <li>Augenfarbe: {{character.eye_color}}</li>
         <li>Geburtsjahr: {{character.birth_year}}</li>
         <li>Geschlecht: {{character.gender}}</li>
-        <li>Heimatplanet: {{character.homeworld}}</li>
+        <li><a routerLink="/planet/{{planetId}}">
+            Heimatplanet: {{ planetName }}
+            </a>
+        </li>
+    </ul>
 
-    </ul>
     <p><b>Filme:</b></p>
-    <ul *ngFor="let film of  character.films">
-        <li>{{film}}</li>
+    <ul *ngFor="let film of character.films; let i = index" [attr.data-index]="i">
+        <a routerLink="/movie/{{id_films[i]}}">
+            <!--  [filmUrl]="film" -->
+            <li>{{movie_title[i]}}</li>
+        </a>
     </ul>
+    
+
 </div>
 <div *ngIf="!character">
     ...Loading

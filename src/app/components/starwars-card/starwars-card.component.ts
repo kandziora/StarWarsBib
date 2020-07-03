@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GetIdService } from '../../services/get-id.service'
 
 @Component({
   selector: 'app-starwars-card',
@@ -15,10 +16,10 @@ export class StarwarsCardComponent implements OnInit {
   @Input('line3') line3: string;
   @Input('path') path: string;
 
-  constructor() { }
+  constructor(private getidService:GetIdService) { }
 
   ngOnInit(): void {
-    this.id = this.url.split("/").slice(-2)[0];
+    this.id = this.getidService.getId(this.url); 
   }
 
 }

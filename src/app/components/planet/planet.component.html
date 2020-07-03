@@ -15,12 +15,19 @@
     </ul>
     <p>{{planet.opening_crawl}}</p>
     <p><b>Filme:</b></p>
-    <ul *ngFor="let film of  planet.films">
-        <li>{{film}}</li>
+    <ul *ngFor="let film of planet.films; let i = index" [attr.data-index]="i">
+        <a routerLink="/movie/{{id_films[i]}}">
+            <!--  [filmUrl]="film" -->
+            <li>{{movie_title[i]}}</li>
+        </a>
     </ul>
+    
     <p><b>Charactere:</b></p>
-    <ul *ngFor="let resident of  planet.residents">
-        <li>{{resident}}</li>
+    <ul *ngFor="let resident of planet.residents; let i = index" [attr.data-index]="i">
+        <a routerLink="/character/{{id_characters[i]}}">
+            <li>{{character_name[i]}}</li>
+        </a>
+        {{film}}
     </ul>
 </div>
 <div *ngIf="!planet">

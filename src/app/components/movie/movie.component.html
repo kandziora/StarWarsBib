@@ -10,13 +10,22 @@
         <li>Erscheinungsdatum: {{movie.release_date}}</li>
     </ul>
     <p>{{movie.opening_crawl}}</p>
+
+  
     <p><b>Charactere:</b></p>
-    <ul *ngFor="let character of  movie.characters">
-        <li>{{character}}</li>
+    <ul *ngFor="let character of  movie.characters; let i = index" [attr.data-index]="i">
+        <a routerLink="/character/{{id_characters[i]}}">
+            <li>{{character_name[i]}}</li>
+        </a>
+        {{film}}
     </ul>
+
     <p><b>Planeten:</b></p>
-    <ul *ngFor="let planet of  movie.planets">
-        <li>{{planet}}</li>
+    <ul *ngFor="let planet of movie.planets; let i = index" [attr.data-index]="i">
+        <a routerLink="/planet/{{id_planets[i]}}">
+            <!--  [filmUrl]="film" -->
+            <li>{{planet_name[i]}}</li>
+        </a>
     </ul>
 </div>
 <div *ngIf="!movie">
