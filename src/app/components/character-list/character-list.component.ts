@@ -4,6 +4,7 @@ import { CharacterService } from '../../services/character.service';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { AddCharacterComponent } from '../add-character/add-character.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-character-list',
@@ -14,7 +15,7 @@ export class CharacterListComponent implements OnInit {
   faChevronRight = faChevronRight;
   faChevronLeft = faChevronLeft;
 
-  constructor(private characterService:CharacterService, private dialog: MatDialog) {
+  constructor(private characterService:CharacterService, public dialog: MatDialog) {
 
    }
 
@@ -37,7 +38,8 @@ export class CharacterListComponent implements OnInit {
   openAddCharacter() {
     const dialogConfig = new MatDialogConfig();
 
-
+    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
 
     this.dialog.open(AddCharacterComponent, dialogConfig);}
  }

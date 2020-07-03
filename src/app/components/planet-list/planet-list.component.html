@@ -1,7 +1,8 @@
 <h1>Planeten</h1>
+<button mat-raised-button (click)="openAddPlanet()" class="float-right">+ add </button>
 <div class="row">
 
-    <div *ngFor="let planet of planetList" class="col-sm-4">
+    <div *ngFor="let planet of planetList" class="col-sm-6 col-md-4">
         <app-starwars-card  
             [url]="planet.url" 
             [title]="planet.name" 
@@ -14,10 +15,10 @@
     </div>
 </div>
 <div class="paging">
-    <button (click)="fetchPlanetList(previous)" *ngIf="previous">            
+    <button mat-raised-button (click)="fetchPlanetList(previous)" *ngIf="previous">            
         <fa-icon [icon]="faChevronLeft"></fa-icon>
     </button>
-    <button (click)="fetchPlanetList(next)" *ngIf="next">
+    <button mat-raised-button (click)="fetchPlanetList(next)" *ngIf="next">
         <fa-icon [icon]="faChevronRight"></fa-icon>
     </button>
 </div>

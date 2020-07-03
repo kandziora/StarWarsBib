@@ -1,5 +1,5 @@
 <h1>Charactere</h1>
-<button (click)="openAddCharacter()" class="float-right">+ add </button>
+<button mat-raised-button (click)="openAddCharacter()" class="float-right">+ add </button>
 <div class="row">
 
     <div *ngFor="let character of characterList" class="col-md-4 col-sm-6">
@@ -15,10 +15,10 @@
     </div>
 </div>
 <div class="paging">
-    <button (click)="fetchCharactersList(previous)" *ngIf="previous">            
+    <button mat-raised-button (click)="fetchCharactersList(previous)" *ngIf="previous">            
         <fa-icon [icon]="faChevronLeft"></fa-icon>
     </button>
-    <button (click)="fetchCharactersList(next)" *ngIf="next">
+    <button mat-raised-button (click)="fetchCharactersList(next)" *ngIf="next">
         <fa-icon [icon]="faChevronRight"></fa-icon>
     </button>
 </div>

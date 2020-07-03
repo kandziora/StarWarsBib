@@ -18,8 +18,11 @@ import { AddCharacterComponent } from './components/add-character/add-character.
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { MatDialogModule } from "@angular/material/dialog";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldModule} from "@angular/material/form-field";
+import { MatInputModule  } from "@angular/material/input";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 @NgModule({
@@ -44,7 +47,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     MatDialogModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule
+  ],
+  exports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent],

@@ -1,99 +1,59 @@
 <h2 mat-dialog-title>Chrakter hinzufügen</h2>
 
-<mat-dialog-content class="">
+<mat-dialog-content class="row">
 
-
-    <form action="" method="get" class="row">
-        <div class="col-md-12">
-            <label for="name" >Name</label>
-
-            <div class="col-md-12">
-                <input type="text" class="col-md-12" name="name" id="name" placeholder="Name" required>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-6">
-                <label for="height" class="col-xs-12">Größe </label>
-                <input type="height" class="col-xs-12" name="height" id="height" placeholder="Größe" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="mass" class="col-xs-12">Gewicht </label>
-                    <input type="mass" class="col-xs-12" name="mass" id="mass" placeholder="Gewicht" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="hair_color" class="col-xs-12">Haarfarbe: </label>
-                    <input type="hair_color" class="col-xs-12" name="hair_color" id="hair_color" placeholder="Haarfarbe" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="eye_color" class="col-xs-12">Augenfarbe </label>
-                    <input type="eye_color" class="col-xs-12" name="eye_color" id="eye_color" placeholder="Augenfarbe" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="birth_year" class="col-xs-12">Geburtsjahr</label>
-                    <input type="birth_year" class="col-xs-12" name="birth_year" id="birth_year" placeholder="Geburtsjahr" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="gender" class="col-xs-12">Geschlecht</label>
-                    <input type="gender" class="col-xs-12" name="gender" id="gender" placeholder="Geschlecht" required>
-                </div>
-            </div>
-        </div>
-    </form>
-      
-
-    <!-- <mat-form-field class="col-md-12">
-        <mat-label >Name</mat-label>
+     <mat-form-field class="col-md-12" appearance="standard" MatFormFieldControl>
+        <mat-label>Input</mat-label>
         <input matInput 
                 placeholder="Name"
                 formControlName="name">
     </mat-form-field>
 
-    <mat-form-field class="col-md-6">
+    <mat-form-field class="col-md-6"   appearance="standard">
         <mat-label>Größe</mat-label>
         <input matInput
                 placeholder="Größe"
                 formControlName="height">
     </mat-form-field>
 
-    <mat-form-field class="col-md-6">
+    <mat-form-field class="col-md-6"  appearance="standard">
         <mat-label>Gewicht</mat-label>
         <input matInput
                 placeholder="Gewicht"
                 formControlName="mass">
     </mat-form-field>
 
-    <mat-form-field class="col-md-6">
-        <label>Haarfarbe</label>
+    <mat-form-field class="col-md-6"  appearance="standard">
+        <mat-label>Haarfarbe</mat-label>
         <input matInput
                 placeholder="Haarfarbe"
                 formControlName="hair_color">
     </mat-form-field>
 
-    <mat-form-field class="col-md-6">
-        <label>Augenfarbe</label>
+    <mat-form-field class="col-md-6" appearance="standard">
+        <mat-label>Augenfarbe</mat-label>
         <input matInput
                 placeholder="Augenfarbe"
                 formControlName="eye_color">
     </mat-form-field>
 
-    <mat-form-field class="col-md-6">
-        <label>Geburtsjahr</label>
+    <mat-form-field class="col-md-6" appearance="standard">
+        <mat-label>Geburtsjahr</mat-label>
         <input matInput
                 placeholder="Geburtsjahr"
                 formControlName="birth_year">
     </mat-form-field>
 
-    <mat-form-field class="col-md-6">
-        <label>Geschlecht</label>
+    <mat-form-field class="col-md-6" appearance="standard">
+        <mat-label>Geschlecht</mat-label>
         <input matInput
                 placeholder="Geschlecht"
                 formControlName="gender">
-    </mat-form-field> -->
+    </mat-form-field> 
 
 </mat-dialog-content>
 
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>Abrechen</button>
-    <button class="mat-raised-button mat-primary">Character hinzufügen</button>
+    <button mat-button class="mat-raised-button mat-primary">Character hinzufügen</button>
 </mat-dialog-actions>

@@ -8,7 +8,8 @@ h2 {
   padding-top: 0;
 }
 nav {
-  border-bottom: lightgray;
+  border-bottom: lightgray solid 1px;
+  margin-bottom: 30px;
 }
 nav a {
   padding: 5px 10px;
