@@ -20,6 +20,7 @@ import { AddPlanetComponent } from './components/add-planet/add-planet.component
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatFormFieldModule} from "@angular/material/form-field";
 import { MatInputModule  } from "@angular/material/input";
+import { MatSelectModule  } from "@angular/material/select";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -49,6 +50,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule
   ],
   exports: [
@@ -59,6 +61,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    MatInputModule,
     MatInputModule,
     MatButtonModule
   ],

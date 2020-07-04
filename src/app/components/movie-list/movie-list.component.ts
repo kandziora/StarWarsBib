@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/Movie';
 import { MovieService } from 'src/app/services/movie.service';
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { AddMovieComponent } from '../add-movie/add-movie.component';
 
 @Component({
   selector: 'app-movie-list',
@@ -9,7 +11,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MovieListComponent implements OnInit {
 
-  constructor(private movieService:MovieService) {
+  constructor(private movieService:MovieService, public dialog: MatDialog) {
 
   }
 
@@ -28,5 +30,11 @@ export class MovieListComponent implements OnInit {
      this.movieList  =  response.results;
    });
  }
+
+ openAddMovie() {
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.autoFocus = true;
+  this.dialog.open(AddMovieComponent, dialogConfig);
+}
 }
   

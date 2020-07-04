@@ -1,6 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-add-character',
@@ -9,7 +8,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 })
 export class AddCharacterComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor() { }
 
 
 }

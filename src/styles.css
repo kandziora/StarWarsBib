@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
 app-root h1 {
     text-align: center;
     margin-bottom: 50px;
@@ -7,9 +15,11 @@ app-root h1 {
 li {
     list-style: none;
 }
-p {
+
+.mat-typography p {
     margin-left: 40px;
 }
+
 app-root hr {
     width: 80px;
     border-top: 1px solid rgba(0,0,0,.6);
@@ -31,6 +41,7 @@ mat-dialog-actions {
 .paging {
     text-align: center;
 }
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
