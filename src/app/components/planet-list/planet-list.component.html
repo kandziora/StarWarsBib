@@ -3,6 +3,7 @@
 <div class="row">
 
     <div *ngFor="let planet of planetList" class="col-sm-6 col-md-4">
+
         <app-starwars-card  
             [url]="planet.url" 
             [title]="planet.name" 
@@ -10,6 +11,7 @@
             line2="Population: {{planet.population}}" 
             line3="Terrain: {{planet.terrain}}" 
             path="planet"
+            imgpath="planetimg"
             >
         </app-starwars-card>
     </div>

@@ -1,8 +1,10 @@
-<a routerLink="/{{path}}/{{id}}">
-    <h4>{{title}}</h4>
-    <ul>
-        <li>{{line1}}</li>
-        <li>{{line2}}</li>
-        <li>{{line3}}</li>
-    </ul>
-</a>
+<div class="starwars-card">
+    <a routerLink="/{{path}}/{{id}}">
+        <img src="../../../assets/{{imgpath}}.jpg" class="teaser-img">
+
+        <div><b>{{title}}</b></div>
+        <div>{{line1}}</div>
+        <div>{{line2}}</div>
+        <div>{{line3}}</div>
+    </a>
+</div>

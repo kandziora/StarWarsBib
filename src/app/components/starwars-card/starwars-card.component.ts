@@ -15,6 +15,7 @@ export class StarwarsCardComponent implements OnInit {
   @Input('line2') line2: string;
   @Input('line3') line3: string;
   @Input('path') path: string;
+  @Input('imgpath') imgpath: string;
 
   constructor(private getidService:GetIdService) { }
 

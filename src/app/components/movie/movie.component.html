@@ -1,33 +1,42 @@
 <div *ngIf="movie">
-    <center> Filmdetails </center>
-    <hr>
-    <h1> {{ movie.title }} </h1>
-    <center> Episode {{movie.episode_id}} </center>
-
-    <ul>
-        <b>Details:</b>
-        <li>Director: {{movie.director}}</li>
-        <li>Produzenten: {{movie.producer}}</li>
-        <li>Erscheinungsdatum: {{movie.release_date}}</li>
-    </ul>
-    <p>{{movie.opening_crawl}}</p>
-
-  
-    <p><b>Charactere:</b></p>
-    <ul *ngFor="let character of  movie.characters; let i = index" [attr.data-index]="i">
-        <a routerLink="/character/{{id_characters[i]}}">
-            <li>{{character_name[i]}}</li>
-        </a>
-        {{film}}
-    </ul>
-
-    <p><b>Planeten:</b></p>
-    <ul *ngFor="let planet of movie.planets; let i = index" [attr.data-index]="i">
-        <a routerLink="/planet/{{id_planets[i]}}">
-            <!--  [filmUrl]="film" -->
-            <li>{{planet_name[i]}}</li>
-        </a>
-    </ul>
+    <div class="col-sm-12">
+        <center> Filmdetails </center>
+        <hr>
+        <h1> {{ movie.title }} </h1>
+        <h4><center> Episode {{movie.episode_id}} </center></h4>
+        <div class="row">
+            <div class="col-sm-6 order-sm-last">
+                <img src="../../../assets/movieimg.jpg" class="teaser-img">
+            </div>
+            <div class="col-sm-6 order-sm-first">
+                <ul>
+                    <b>Details:</b>
+                    <li>Director: {{movie.director}}</li>
+                    <li>Produzenten: {{movie.producer}}</li>
+                    <li>Erscheinungsdatum: {{movie.release_date}}</li>
+                </ul>
+                <p>{{movie.opening_crawl}}</p>
+                    <div *ngIf="id_characters[0]" class="link-list">
+                        <p><b>Charactere:</b></p>
+                        <ul *ngFor="let character of  movie.characters; let i = index" [attr.data-index]="i">
+                            <a routerLink="/character/{{id_characters[i]}}">
+                                <li>{{character_name[i]}}</li>
+                            </a>
+                            {{film}}
+                        </ul>
+                    </div>
+                    <div *ngIf="id_planets[0]" class="link-list">    
+                        <p><b>Planeten:</b></p>
+                        <ul *ngFor="let planet of movie.planets; let i = index" [attr.data-index]="i">
+                            <a routerLink="/planet/{{id_planets[i]}}">
+                                <!--  [filmUrl]="film" -->
+                                <li>{{planet_name[i]}}</li>
+                            </a>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div *ngIf="!movie">
     ...Loading

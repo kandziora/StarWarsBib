@@ -17,8 +17,6 @@ const routes: Routes = [
   {path: 'character-list', component: CharacterListComponent},
   {path: 'planet-list', component: PlanetListComponent},
   {path: 'planet/:id', component: PlanetComponent},
-
-
 ];
 
 @NgModule({

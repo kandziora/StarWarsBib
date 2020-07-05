@@ -56,6 +56,7 @@ export class PlanetComponent implements OnInit {
       for ( let entry of this.planet.residents) {
         let characterId = this.getidService.getId(entry);
         this.id_characters.push(characterId);
+        console.log(this.id_characters);
         this.characterService.getCharacter(characterId).subscribe(response => { 
           this.character  =  response;
           this.character_name.push(this.character.name);

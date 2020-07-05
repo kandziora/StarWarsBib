@@ -1,3 +1,4 @@
+/* standard style */
 html, body { 
     height: 100%; 
 }
@@ -6,18 +7,22 @@ body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
+app-root .container {
+    padding: 40px ;
+}
 
 app-root h1 {
     text-align: center;
     margin-bottom: 50px;
 }
-
+ul {
+    padding-left: 0;
+}
 li {
     list-style: none;
 }
-
-.mat-typography p {
-    margin-left: 40px;
+.link-list {
+    margin-right: 40px;
 }
 
 app-root hr {
@@ -31,17 +36,34 @@ app-root button:focus {
  .cdk-overlay-container mat-dialog-container {
     max-width: 500px;
 } 
-.cdk-overlay-container mat-dialog-container h2 {
-    color: black;
-}
 
 mat-dialog-actions {
     float: right;
+}
+.mat-raised-button.mat-primary {
+    background-color: black;
 }
 .paging {
     text-align: center;
 }
 
+.starwars-card {
+    margin-bottom: 15px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.starwars-card div {
+    margin-left: 10px;
+    max-width: 240px;
+}
+
+img.teaser-img {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 15px;
+}
+/* mobile style */
+@media (max-width: 575.98px) {
+    app-root .container {
+        padding: 20px ;
+    }
+ }

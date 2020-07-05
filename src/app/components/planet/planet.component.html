@@ -1,35 +1,46 @@
 <div *ngIf="planet">
-    <center> Planetendetails </center>
-    <hr>
-    <h1> {{ planet.name }} </h1>
-
-    <ul>
-        <b>Details:</b>
-        <li>Type: {{planet.terrain}}</li>
-        <li>Surface Water: {{planet.surface_water}}</li>
-        <li>Rotation Period: {{planet.rotation_period}}</li>
-        <li>Population: {{planet.population}}</li>
-        <li>Orbital Period: {{planet.orbital_period}}</li>
-        <li>Gravity: {{planet.gravity}}</li>
-        <li>Climate: {{planet.climate}}</li>
-        <li>Diameter: {{planet.diameter}}</li>
-    </ul>
-    <p>{{planet.opening_crawl}}</p>
-    <p><b>Filme:</b></p>
-    <ul *ngFor="let film of planet.films; let i = index" [attr.data-index]="i">
-        <a routerLink="/movie/{{id_films[i]}}">
-            <!--  [filmUrl]="film" -->
-            <li>{{movie_title[i]}}</li>
-        </a>
-    </ul>
-    
-    <p><b>Charactere:</b></p>
-    <ul *ngFor="let resident of planet.residents; let i = index" [attr.data-index]="i">
-        <a routerLink="/character/{{id_characters[i]}}">
-            <li>{{character_name[i]}}</li>
-        </a>
-        {{film}}
-    </ul>
+    <div class="col-sm-12">
+        <center> Planetendetails </center>
+        <hr>
+        <h1> {{ planet.name }} </h1>
+        <div class="row">
+            <div class="col-sm-6 order-sm-last">
+                <img src="../../../assets/planetimg.jpg" class="teaser-img">
+            </div>
+            <div class="col-sm-6 order-sm-first">
+                <ul>
+                    <b>Details:</b>
+                    <li>Type: {{planet.terrain}}</li>
+                    <li>Surface Water: {{planet.surface_water}}</li>
+                    <li>Rotation Period: {{planet.rotation_period}}</li>
+                    <li>Population: {{planet.population}}</li>
+                    <li>Orbital Period: {{planet.orbital_period}}</li>
+                    <li>Gravity: {{planet.gravity}}</li>
+                    <li>Climate: {{planet.climate}}</li>
+                    <li>Diameter: {{planet.diameter}}</li>
+                </ul>
+                <p>{{planet.opening_crawl}}</p>
+                    <div *ngIf="id_characters[0]" class="link-list">
+                        <p><b>Charactere:</b></p>
+                        <ul *ngFor="let resident of planet.residents; let i = index" [attr.data-index]="i">
+                            <a routerLink="/character/{{id_characters[i]}}">
+                                <li>{{character_name[i]}}</li>
+                            </a>
+                            {{film}}
+                        </ul>
+                    </div>
+                    <div *ngIf="id_films[0]" class="link-list">
+                        <p><b>Filme:</b></p>
+                        <ul *ngFor="let film of planet.films; let i = index" [attr.data-index]="i">
+                            <a routerLink="/movie/{{id_films[i]}}">
+                                <!--  [filmUrl]="film" -->
+                                <li>{{movie_title[i]}}</li>
+                            </a>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div *ngIf="!planet">
     ...Loading
